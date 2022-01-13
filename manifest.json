@@ -3,6 +3,12 @@
     "description": "Set custom playback speeds on your youtube videos",
     "version": "0.1",
     "manifest_version": 3,
+    "content_scripts": [
+      {
+        "matches": ["https://*.youtube.com/watch*"],
+        "js": ["content.js"]
+      }
+    ],
     "permissions": ["storage", "activeTab", "scripting"],
     "action": {
         "default_popup": "index.html",
