@@ -1,28 +1,35 @@
 {
     "name": "Youtube Accelerator",
-    "description": "Set custom playback speeds on your youtube videos",
+    "description": "Set custom playback speeds on your Youtube videos",
     "version": "0.2",
     "manifest_version": 3,
+    "background": {
+      "service_worker": "background.js"
+    },
     "content_scripts": [
       {
-        "matches": ["https://*.youtube.com/watch*"],
-        "js": ["content.js"]
+        "matches": ["https://www.youtube.com/watch*"],
+        "js": ["youtube/video.js"]
+      },
+      {
+        "matches": ["https://www.youtube.com/"],
+        "js": ["youtube/homepage.js"]
       }
     ],
-    "permissions": ["storage", "activeTab", "scripting"],
+    "permissions": ["storage", "activeTab", "scripting", "tabs"],
     "action": {
         "default_popup": "index.html",
         "default_icon": {
-            "16": "/images/icon.svg",
-            "32": "/images/icon.svg",
-            "48": "/images/icon.svg",
-            "128": "/images/icon.svg"
+            "16": "/assets/icons/icon16.png",
+            "32": "/assets/icons/icon32.png",
+            "48": "/assets/icons/icon48.png",
+            "128": "/assets/icons/icon128.png"
           }
     },    
     "icons": {
-        "16": "/images/icon.svg",
-        "32": "/images/icon.svg",
-        "48": "/images/icon.svg",
-        "128": "/images/icon.svg"
+        "16": "/assets/icons/icon16.png",
+        "32": "/assets/icons/icon32.png",
+        "48": "/assets/icons/icon48.png",
+        "128": "/assets/icons/icon128.png"
     }
 }
