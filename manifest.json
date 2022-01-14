@@ -3,9 +3,6 @@
     "description": "Set custom playback speeds on your Youtube videos",
     "version": "0.2",
     "manifest_version": 3,
-    "background": {
-      "service_worker": "background.js"
-    },
     "content_scripts": [
       {
         "matches": ["https://www.youtube.com/watch*"],
