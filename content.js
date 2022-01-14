@@ -1,4 +1,7 @@
-window.addEventListener("load", setTimeout(initBooster, 500))
+if(window)
+    window.addEventListener("load", () => setTimeout(initBooster, 500))
+else 
+    document.addEventListener("load", () => setTimeout(initBooster, 500))
 
 function initBooster() {
     if(document.getElementById('youtube-accelerator-input')) return true
