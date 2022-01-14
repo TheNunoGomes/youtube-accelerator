@@ -1,7 +1,7 @@
 {
     "name": "Youtube Accelerator",
     "description": "Set custom playback speeds on your youtube videos",
-    "version": "0.1",
+    "version": "0.2",
     "manifest_version": 3,
     "content_scripts": [
       {

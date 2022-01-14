@@ -1,4 +1,4 @@
-# Youtube Accelerator v0.1
+# Youtube Accelerator v0.2
 
 In a hurry?
 
