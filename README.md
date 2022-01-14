@@ -1,4 +1,4 @@
-# Youtube Accelerator v0.2
+# Youtube Accelerator v1.0.0
 
 In a hurry?
 
@@ -15,3 +15,9 @@ Supports up to 16x speed!
 5. Click on Load Unpacked
 6. Select repository folder
 7. All done!
+
+## Chrome Store Installation
+
+The extension will be located in the video information bar
+
+![Booster Component](./docs/component.png)
