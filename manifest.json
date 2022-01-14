@@ -1,7 +1,7 @@
 {
     "name": "Youtube Accelerator",
     "description": "Set custom playback speeds on your Youtube videos",
-    "version": "0.2",
+    "version": "1.0.0",
     "manifest_version": 3,
     "content_scripts": [
       {
@@ -13,7 +13,6 @@
         "js": ["youtube/homepage.js"]
       }
     ],
-    "permissions": ["storage", "activeTab", "scripting", "tabs"],
     "action": {
         "default_popup": "index.html",
         "default_icon": {
