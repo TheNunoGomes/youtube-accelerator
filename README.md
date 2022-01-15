@@ -18,6 +18,10 @@ Supports up to 16x speed!
 
 ## Chrome Store Installation
 
+Currently under review
+
+## Component
+
 The extension will be located in the video information bar
 
 ![Booster Component](./docs/component.png)
