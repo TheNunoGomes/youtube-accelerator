@@ -10,7 +10,7 @@ Supports up to 16x speed!
 
 1. Clone repository to folder of your choice
 2. Open Google Chrome
-3. Go to chrome://extensions/
+3. Go to [chrome://extensions/](chrome://extensions/)
 4. Enable Developer Mode
 5. Click on Load Unpacked
 6. Select repository folder
@@ -18,7 +18,7 @@ Supports up to 16x speed!
 
 ## Chrome Store Installation
 
-Currently under review
+Visit [Google's web store](https://chrome.google.com/webstore/detail/youtube-accelerator/ajobbbellhaokbfkgkcpapmbenlccokd) to add the extension to your browser.
 
 ## Component
 
