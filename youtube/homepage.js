@@ -36,18 +36,29 @@ function initBooster() {
     button.style.cursor = 'pointer'
     button.style.backgroundColor = 'transparent'
 
-    input.value = video.playbackRate
+    sessionRate = window.sessionStorage.getItem('yt-player-playback-rate')
+    input.value = sessionRate ? JSON.parse(sessionRate).data : video.playbackRate
 
-
-    button.addEventListener('click', () => {
-        const input = document.getElementById('youtube-accelerator-input')
+    video.addEventListener('ratechange', () => {
         const video = document.querySelector('video.video-stream.html5-main-video')
+        const input = document.getElementById('youtube-accelerator-input')
+        input.value = video.playbackRate
+    })
+    button.addEventListener('click', () => {
+        const video = document.querySelector('video.video-stream.html5-main-video')
+        const input = document.getElementById('youtube-accelerator-input')
 
-        video.playbackRate = Number(input.value) || 1
+        video.playbackRate = Number(input.value)
+        let sessionRate = {
+            data: `${video.playbackRate}`,
+            creation: new Date().getTime()
+        }
+
+        window.sessionStorage.setItem('yt-player-playback-rate', JSON.stringify(sessionRate))
     })
 
     const menuContainer = document.getElementById('menu-container')
 
     menuContainer.parentElement.insertBefore(input, menuContainer.nextSibling)
     menuContainer.parentElement.insertBefore(button, input.nextSibling)
-}   
+}
