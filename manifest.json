@@ -5,12 +5,13 @@
     "manifest_version": 3,
     "content_scripts": [
       {
-        "matches": ["https://www.youtube.com/watch*"],
-        "js": ["youtube/video.js"]
+        "matches": ["https://www.youtube.com/*"],
+        "exclude_matches": ["https://www.youtube.com/watch*"],
+        "js": ["youtube/homepage.js"]
       },
       {
-        "matches": ["https://www.youtube.com/"],
-        "js": ["youtube/homepage.js"]
+        "matches": ["https://www.youtube.com/watch*"],
+        "js": ["youtube/video.js"]
       }
     ],  
     "icons": {

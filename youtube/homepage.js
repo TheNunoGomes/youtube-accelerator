@@ -1,5 +1,5 @@
 const refresh = setInterval(() => {
-    if(location.pathname === '/' || location.search === "" || location.hostname != "www.youtube.com") return
+    if(!location.href.match(/^https\:\/\/www.youtube.com\/watch\?*/g)) return
     initBooster()
     clearInterval(refresh)
 }, 500)
