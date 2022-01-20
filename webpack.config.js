@@ -17,7 +17,6 @@ module.exports = {
     entry: {
         "youtube/homepage.js": './youtube/homepage.js',
         "youtube/video.js": './youtube/video.js',
-        "style.css": './style.css',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -37,10 +36,6 @@ module.exports = {
                     }
                 } 
             },
-            { 
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"],
-            },
         ],
     },
     plugins: [
@@ -52,7 +47,7 @@ module.exports = {
                         return modify(content)
                     }
                 },
-                { from: "assets/", to: "assets/" },
+                { from: "assets/icons/", to: "assets/icons/" },
             ],
         })
     ,],
