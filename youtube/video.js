@@ -43,15 +43,14 @@ function initBooster() {
         input.value = video.playbackRate
     })
     button.addEventListener('click', () => {
-        const video = document.querySelector('video.video-stream.html5-main-video')
+        const videos = document.querySelectorAll('video.video-stream.html5-main-video')
         const input = document.getElementById('youtube-accelerator-input')
+        videos.forEach(video => video.playbackRate = input.value)
 
-        video.playbackRate = Number(input.value)
         let sessionRate = {
-            data: `${video.playbackRate}`,
+            data: `${videos[0].playbackRate}`,
             creation: new Date().getTime()
         }
-
         window.sessionStorage.setItem('yt-player-playback-rate', JSON.stringify(sessionRate))
     })
 
