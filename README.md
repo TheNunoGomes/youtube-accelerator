@@ -1,4 +1,4 @@
-# Youtube Accelerator v1.0.0
+# Youtube Accelerator v1.1.0
 
 In a hurry?
 
@@ -25,3 +25,22 @@ Visit [Google's web store](https://chrome.google.com/webstore/detail/youtube-acc
 The extension will be located in the video information bar
 
 ![Booster Component](./docs/component.png)
+
+## Release History
+
+### v1.1.0
+
+- Component is added regardless of user journey on Youtube
+- Added session storage support so that the playback speed persists after changing video
+- Webpack build for Devs
+- Code structure improvements
+
+### v1.0.0
+
+- Moved functionality from popup to component below video
+- Component is added when opening video directly from URL
+- Component is added when selecting video from home page
+
+### v0.0.1
+
+- Basic functionality implemented in popup
