@@ -57,6 +57,6 @@ function initBooster() {
 
   const menuContainer = document.getElementById("menu-container");
 
-  menuContainer.parentElement.insertBefore(input, menuContainer.nextSibling);
-  menuContainer.parentElement.insertBefore(button, input.nextSibling);
+  menuContainer?.parentElement.insertBefore(input, menuContainer.nextSibling);
+  menuContainer?.parentElement.insertBefore(button, input.nextSibling);
 }
