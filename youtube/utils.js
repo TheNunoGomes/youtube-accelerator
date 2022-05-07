@@ -1,13 +1,13 @@
 function initBooster() {
   if (document.getElementById("yt_acc-container")) return true;
 
+  // Video
+  const video = document.querySelector("video.video-stream.html5-main-video");
+
   sessionRate = window.sessionStorage.getItem("yt-player-playback-rate");
   let playbackRate = sessionRate
     ? JSON.parse(sessionRate).data
     : video.playbackRate;
-
-  // Video
-  const video = document.querySelector("video.video-stream.html5-main-video");
 
   // Decrease speed
   const decreaseSpeed = document.createElement("button");
