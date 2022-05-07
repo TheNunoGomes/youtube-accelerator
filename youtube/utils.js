@@ -15,6 +15,7 @@ function initBooster() {
   decreaseSpeed.innerHTML = `<svg style="width:24px;height:24px" viewBox="0 0 24 24">
     <path fill="white" d="M11.5,12L20,18V6M11,18V6L2.5,12L11,18Z" />
   </svg>`;
+  decreaseSpeed.title = `Decrease speed (Hot key Alt + "-")`;
 
   // Speed Indicator
   const speedIndicator = document.createElement("div");
@@ -26,6 +27,7 @@ function initBooster() {
   increaseSpeed.innerHTML = `<svg style="width:24px;height:24px" viewBox="0 0 24 24">
   <path fill="white" d="M13,6V18L21.5,12M4,18L12.5,12L4,6V18Z" />
   </svg>`;
+  increaseSpeed.title = `Increase speed (Hot key Alt + "+")`;
 
   // Controls container
   const containerDiv = document.createElement("div");
@@ -136,6 +138,7 @@ function applySpeedIndicatorClass(container) {
   element.style.color = "white";
   element.style.backgroundColor = "#222";
   element.style.fontSize = "1.5em";
+  element.style.padding = "0 0.5em";
 }
 
 function applyYtAccChildrenClass(container) {
