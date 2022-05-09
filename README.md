@@ -22,11 +22,33 @@ Visit [Google's web store](https://chrome.google.com/webstore/detail/youtube-acc
 
 ## Component
 
-The extension will be located in the video information bar
+The extension will be located when hovering over the video on the top left.
 
 ![Booster Component](./docs/component.png)
 
-## Release History
+## Release Notes
+
+### 2.0.1
+
+- User is able to focus on the on-screen buttons and use the "Space" or the "Enter" keys to decrease/increase (respective to the focused button) playback rate.
+- New Hotkeys:
+  - Down Arrow - Decreases speed by 0.05
+  - Up Arrow - Increases speed by 0.05
+  - Number except 0 - Sets the speed to number value
+  - Number 0 - Sets the speed to 10x
+
+### 2.0.0
+
+- Changed input in the information bar to controls on top of the video when hovering.
+  - Controls are hidden when not hovering over the video
+- Video speed is indicated in controls component
+- Video speed can be controlled by:
+  - Clicking on the buttons
+    - Left side decreases
+    - Right side increases
+  - Hotkeys - Alt + [the following]
+    - "-" - Decreases by 0.05
+    - "+" - Increases by 0.05
 
 ### v1.1.0
 
