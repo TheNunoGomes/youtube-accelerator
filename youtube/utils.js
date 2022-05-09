@@ -91,7 +91,7 @@ function speedUp(video) {
   );
 }
 function speedDown(video) {
-  if (video.playbackRate <= 0) return;
+  if (video.playbackRate <= 0.1) return;
   video.playbackRate = Number(video.playbackRate) - 0.05;
   const sessionRate = {
     data: `${video.playbackRate}`,
