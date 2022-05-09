@@ -57,16 +57,36 @@ function initBooster() {
   );
 
   decreaseSpeed.addEventListener("mousedown", () => speedDown(video));
-  increaseSpeed.addEventListener("mousedown", () => speedUp(video));
-  document.addEventListener("keydown", (e) => {
-    if (!e.altKey) return;
-    if (e.key === "-") {
+  decreaseSpeed.addEventListener("keydown", (e) => {
+    if ([" ", "Enter"].includes(e.key)) {
       speedDown(video);
       return;
     }
-    if (e.key === "+") {
+  });
+
+  increaseSpeed.addEventListener("mousedown", () => speedUp(video));
+  increaseSpeed.addEventListener("keydown", (e) => {
+    if ([" ", "Enter"].includes(e.key)) {
       speedUp(video);
       return;
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!e.altKey) return;
+    if (["-", "ArrowDown"].includes(e.key)) {
+      speedDown(video);
+      return;
+    }
+    if (["+", "ArrowUp"].includes(e.key)) {
+      speedUp(video);
+      return;
+    }
+    if (Number(e.key)) {
+      video.playbackRate = e.key;
+    }
+    if (e.key === "0") {
+      video.playbackRate = "10";
     }
   });
 }
