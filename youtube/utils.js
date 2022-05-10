@@ -57,16 +57,29 @@ function initBooster() {
   );
 
   decreaseSpeed.addEventListener("mousedown", () => speedDown(video));
+  decreaseSpeed.addEventListener("keydown", (e) => {
+    if ([" ", "Enter"].includes(e.key)) {
+      speedDown(video);
+    }
+  });
+
   increaseSpeed.addEventListener("mousedown", () => speedUp(video));
+  increaseSpeed.addEventListener("keydown", (e) => {
+    if ([" ", "Enter"].includes(e.key)) {
+      speedUp(video);
+    }
+  });
+
   document.addEventListener("keydown", (e) => {
     if (!e.altKey) return;
-    if (e.key === "-") {
+    if (["-", "ArrowDown"].includes(e.key)) {
       speedDown(video);
-      return;
-    }
-    if (e.key === "+") {
+    } else if (["+", "ArrowUp"].includes(e.key)) {
       speedUp(video);
-      return;
+    } else if (Number(e.key)) {
+      video.playbackRate = e.key;
+    } else if (e.key === "0") {
+      video.playbackRate = "10";
     }
   });
 }
@@ -91,7 +104,7 @@ function speedUp(video) {
   );
 }
 function speedDown(video) {
-  if (video.playbackRate <= 0) return;
+  if (video.playbackRate <= 0.1) return;
   video.playbackRate = Number(video.playbackRate) - 0.05;
   const sessionRate = {
     data: `${video.playbackRate}`,
