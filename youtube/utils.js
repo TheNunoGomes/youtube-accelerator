@@ -2,12 +2,14 @@ function initBooster() {
   if (document.getElementById("yt_acc-container")) return true;
 
   // Video
-  const video = document.querySelector("video.video-stream.html5-main-video");
+  const videos = document.querySelectorAll(
+    "video.video-stream.html5-main-video"
+  );
 
   sessionRate = window.sessionStorage.getItem("yt-player-playback-rate");
   let playbackRate = sessionRate
     ? JSON.parse(sessionRate).data
-    : video.playbackRate;
+    : videos[0].playbackRate;
 
   // Decrease speed
   const decreaseSpeed = document.createElement("button");
@@ -42,10 +44,12 @@ function initBooster() {
   const videoContainer = document.getElementById("movie_player");
   videoContainer.parentElement.appendChild(containerDiv);
 
-  video.addEventListener("ratechange", () => {
-    playbackRate = video.playbackRate;
-    speedIndicator.innerText = `${playbackRate.toFixed(2)}x`;
-  });
+  videos.forEach((v) =>
+    v.addEventListener("ratechange", () => {
+      playbackRate = v.playbackRate;
+      speedIndicator.innerText = `${playbackRate.toFixed(2)}x`;
+    })
+  );
 
   videoContainer.addEventListener("mouseenter", () =>
     showControls(containerDiv)
@@ -56,30 +60,34 @@ function initBooster() {
     hideControls(containerDiv)
   );
 
-  decreaseSpeed.addEventListener("mousedown", () => speedDown(video));
+  decreaseSpeed.addEventListener("mousedown", () =>
+    videos.forEach((v) => speedDown(v))
+  );
   decreaseSpeed.addEventListener("keydown", (e) => {
     if ([" ", "Enter"].includes(e.key)) {
-      speedDown(video);
+      videos.forEach((v) => speedDown(v));
     }
   });
 
-  increaseSpeed.addEventListener("mousedown", () => speedUp(video));
+  increaseSpeed.addEventListener("mousedown", () =>
+    videos.forEach((v) => speedUp(v))
+  );
   increaseSpeed.addEventListener("keydown", (e) => {
     if ([" ", "Enter"].includes(e.key)) {
-      speedUp(video);
+      videos.forEach((v) => speedUp(v));
     }
   });
 
   document.addEventListener("keydown", (e) => {
     if (!e.altKey) return;
     if (["-", "ArrowDown"].includes(e.key)) {
-      speedDown(video);
+      videos.forEach((v) => speedDown(v));
     } else if (["+", "ArrowUp"].includes(e.key)) {
-      speedUp(video);
+      videos.forEach((v) => speedUp(v));
     } else if (Number(e.key)) {
-      video.playbackRate = e.key;
+      videos.forEach((v) => (v.playbackRate = e.key));
     } else if (e.key === "0") {
-      video.playbackRate = "10";
+      videos.forEach((v) => (v.playbackRate = "10"));
     }
   });
 }
